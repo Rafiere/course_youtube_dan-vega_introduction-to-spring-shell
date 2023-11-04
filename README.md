@@ -1,0 +1,1 @@
+This is a simple project of a course about Spring Shell.
