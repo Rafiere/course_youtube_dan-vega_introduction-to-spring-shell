@@ -18,7 +18,7 @@ public class Application {
 	//Estamos criando um Bean para que póssamos utilizar em outro lugar da aplicação.
 
 	@Bean
-	JsonPlaceholderService jsonPlaceholderService(){
+	public JsonPlaceholderService jsonPlaceholderService(){
 		WebClient client = WebClient.builder()
 				.baseUrl("https://jsonplaceholder.typicode.com").build();
 
