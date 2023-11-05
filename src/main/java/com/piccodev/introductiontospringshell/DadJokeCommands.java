@@ -15,7 +15,7 @@ import java.net.http.HttpResponse;
 public class DadJokeCommands {
 
     @ShellMethod(key = "random", value = "Fetch a random dad joke")
-    public DadJokeResponse getRandomDadJoke() throws IOException, InterruptedException {
+    public String getRandomDadJoke() throws IOException, InterruptedException {
 
         //GET https://iconhazdadjoke.com
 
@@ -32,6 +32,8 @@ public class DadJokeCommands {
 
         ObjectMapper mapper = new ObjectMapper();
 
-        return mapper.readValue(response.body(), DadJokeResponse.class);
+        var joke = mapper.readValue(response.body(), DadJokeResponse.class);
+
+        return joke.joke();
     }
 }
